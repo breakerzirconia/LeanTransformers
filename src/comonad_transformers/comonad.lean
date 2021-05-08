@@ -12,7 +12,6 @@ infix ` =>> `:55 := flip has_extend.extend
 
 class comonad (w : Type → Type) extends functor w, has_extract w, has_extend w
 
-@[inline] def comonad.duplicate {α : Type} 
-                                {w : Type → Type} [has_extend w] : w α → w (w α) := (<<=) _ _ id
+@[inline] def comonad.duplicate {α : Type} {w : Type → Type} [has_extend w] : w α → w (w α) := (<<=) _ _ id
 
 prefix ` & `:100 := comonad.duplicate 
